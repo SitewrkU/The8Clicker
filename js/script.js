@@ -787,7 +787,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function upgrdEnd() {
         const upgrade = upgrades[0];
         if (ClickCount >= upgrade.price) {
-            window.location.href = '/EndScreen/End.html';  // Перенаправлення на нову сторінку
+            window.location.href = '../../EndScreen/End.html';  // Перенаправлення на нову сторінку
         }
     }
 
