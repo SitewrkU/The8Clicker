@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function ImportInfo(){
         elements.clickBonusX.textContent = `Бонус кліку: ${clickBonus}`;
-        elements.autoBonusX.textContent = `Бонус автоферми: ${autoBonus}`;
+        elements.autoBonusX.textContent = `Бонус автоферми: ${autoBonus.toFixed(0)}`;
 
         let clicksPerSecond = (1000 / autoSpeed) * autoBonus;
         elements.autoCpsX.textContent = `Кількість автоферми кліків/с: ${clicksPerSecond.toFixed(1)}/с`;

@@ -3,7 +3,7 @@ const crystalEl = document.getElementById("crystals");
 const SScrystalEl = document.getElementById("SScrystals");
 const heart = document.getElementById("heart");
 const header = document.getElementById("HeaderH");
-let ClickCount = 100000000;
+let ClickCount = 0;
 let CrystalCount = 0;
 let SSCrystalCount = 0;
 
@@ -12,6 +12,7 @@ let autoBonus = 1;
 let autoSpeed = 500;
 let crystalSpeed = 10000;
 let critChance = 0;
+let AstraChance = 3; //3%
 
 let soundAvaible = false;
 let criticalAvaible = false;
@@ -103,6 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
             priceElement: document.getElementById("upgrd-pCrystl2"),
             element: document.getElementById("upgrdCrystl2"),
             additionalElement: document.getElementById("upgrdSpeedCAuto"),
+            additionalElement2: document.getElementById("upgrdChanceAstra"),
             count: 0,
             price: 15000,
         },
@@ -158,6 +160,7 @@ document.addEventListener("DOMContentLoaded", () => {
             button: document.getElementById("upgrd-btnupgrdAutoBonusX2"),
             priceElement: document.getElementById("upgrd-pupgrdAutoBonusX2"),
             element: document.getElementById("upgrdAutoBonusX2"),
+            additionalElement: document.getElementById("upgrdAutoBonusX2Num2"),
             count: 0,
             price: 5,
         },
@@ -172,8 +175,31 @@ document.addEventListener("DOMContentLoaded", () => {
             button: document.getElementById("upgrd-btnClickSBonus2"),
             priceElement: document.getElementById("upgrd-pClickSBonus2"),
             element: document.getElementById("upgrdClickSBonus2"),
+            additionalElement: document.getElementById("upgrdClickSBonus2Num2"),
             count: 0,
             price: 150000,
+        },
+        22: {
+            button: document.getElementById("upgrd-btnChanceAstra"),
+            priceElement: document.getElementById("upgrd-pChanceAstra"),
+            element: document.getElementById("upgrdChanceAstra"),
+            count: 0,
+            price: 350,
+        },
+        23: {
+            button: document.getElementById("upgrd-btnupgrdAutoBonusX2Num2"),
+            priceElement: document.getElementById("upgrd-pupgrdAutoBonusX2Num2"),
+            element: document.getElementById("upgrdAutoBonusX2Num2"),
+            count: 0,
+            price: 3,
+            price2: 220,
+        },
+        24: {
+            button: document.getElementById("upgrd-btnClickSBonus2Num2"),
+            priceElement: document.getElementById("upgrd-pClickSBonus2Num2"),
+            element: document.getElementById("upgrdClickSBonus2Num2"),
+            count: 0,
+            price: 250000,
         },
 
 
@@ -184,7 +210,7 @@ document.addEventListener("DOMContentLoaded", () => {
             element: document.getElementById("upgrdEnd"),
             count: 0,
             price: 8888888,
-        },
+        }
     };
 
     //Клік
@@ -283,7 +309,7 @@ document.addEventListener("DOMContentLoaded", () => {
             clicksEl.textContent = `Кліки: ${Math.floor(ClickCount)}`;
 
             autoBonus++;
-            if(upgrade.count == 20){
+            if(upgrade.count == 25){
                 upgrade.button.disabled = true;
                 upgrade.button.style.backgroundColor = "#474444";
                 upgrade.button.style.cursor = "default";
@@ -515,7 +541,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 CrystalCount += randCrystal; 
 
                 let randSScrystal = Math.floor(Math.random() * 100) + 1;
-                if (randSScrystal <= 3) {
+                if (randSScrystal <= AstraChance) {
                     SSCrystalCount++;
                 }
 
@@ -551,7 +577,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 CrystalCount += randCrystal; 
 
                 let randSScrystal = Math.floor(Math.random() * 100) + 1;
-                if (randSScrystal <= 3) {
+                if (randSScrystal <= AstraChance) {
                     SSCrystalCount++;
                 }
 
@@ -567,6 +593,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 upgrade.button.style.cursor = "default";
                 upgrade.element.style.backgroundColor = "#706b6b";
                 upgrade.additionalElement.style.display = "block";
+                upgrade.additionalElement2.style.display = "block";
                 upgrade.button.removeEventListener("click", CrystalSpeed);
             }
         }
@@ -691,7 +718,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-
+    //Авто бонус
     function upgrdAutoCBonus() {
         const upgrade = upgrades[18];
 
@@ -710,7 +737,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-
+    // Авто бонус х2.5
     function upgrdAutoCBonusX2() {
         const upgrade = upgrades[19];
 
@@ -724,12 +751,13 @@ document.addEventListener("DOMContentLoaded", () => {
             upgrade.button.style.cursor = "default";
             upgrade.element.style.backgroundColor = "#706b6b";
             upgrade.priceElement.style.color = "black";
+            upgrade.additionalElement.style.display = "block";
             upgrade.button.removeEventListener("click", upgrdAutoCBonusX2);
         }
     }
 
 
-
+    //швидкість автофемри кристалів, ласт
     function upgrdSpeedCAuto(){
         const upgrade = upgrades[20];
 
@@ -749,8 +777,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 CrystalCount += randCrystal; 
 
                 let randSScrystal = Math.floor(Math.random() * 100) + 1;
-                if (randSScrystal <= 3) {
+                if (randSScrystal <= AstraChance) {
                     SSCrystalCount++;
+                    console.log(AstraChance)
                 }
 
                 SScrystalEl.textContent = `Астраліт: ${SSCrystalCount}`; 
@@ -779,15 +808,73 @@ document.addEventListener("DOMContentLoaded", () => {
             upgrade.button.style.cursor = "default";
             upgrade.element.style.backgroundColor = "#706b6b";
             upgrade.priceElement.style.color = "black";
+            upgrade.additionalElement.style.display = "block";
             upgrade.button.removeEventListener("click", upgrdClickSBonus2);
         }
     }
+
+    function upgrdChanceAstra() {
+        const upgrade = upgrades[22];
+        if (CrystalCount >= upgrade.price) {
+            upgrade.count++;
+            CrystalCount -= upgrade.price; 
+            AstraChance += 2;
+
+            crystalEl.textContent = `Кристали: ${CrystalCount}`; 
+
+            upgrade.button.disabled = true;
+            upgrade.button.style.backgroundColor = "#474444";
+            upgrade.button.style.cursor = "default";
+            upgrade.element.style.backgroundColor = "#706b6b";
+            upgrade.button.removeEventListener("click", upgrdChanceAstra);
+        }
+    }
+
+    function upgrdAutoBonusX2Num2() {
+        const upgrade = upgrades[23];
+
+        if (SSCrystalCount >= upgrade.price && CrystalCount >= upgrade.price2) {
+            upgrade.button.disabled = true;
+            SSCrystalCount -= upgrade.price; 
+            CrystalCount -= upgrade.price2;
+
+            autoBonus *= 2.2;
+            
+            SScrystalEl.textContent = `Астраліт: ${SSCrystalCount}`;
+            crystalEl.textContent = `Кристали: ${CrystalCount}`; 
+            upgrade.button.style.backgroundColor = "#474444";
+            upgrade.button.style.cursor = "default";
+            upgrade.element.style.backgroundColor = "#706b6b";
+            upgrade.priceElement.style.color = "black";
+            upgrade.button.removeEventListener("click", upgrdAutoBonusX2Num2);
+        }
+    }
+
+
+    function upgrdClickSBonus2Num2() {
+        const upgrade = upgrades[24];
+
+        if (ClickCount >= upgrade.price) {
+            upgrade.button.disabled = true;
+            ClickCount -= upgrade.price; 
+            clickBonus = clickBonus * 1.8;
+            
+            clicksEl.textContent = `Кліки: ${Math.floor(ClickCount)}`;
+            upgrade.button.style.backgroundColor = "#474444";
+            upgrade.button.style.cursor = "default";
+            upgrade.element.style.backgroundColor = "#706b6b";
+            upgrade.priceElement.style.color = "black";
+            upgrade.button.removeEventListener("click", upgrdClickSBonus2Num2);
+        }
+    }
+
+
 
 
     function upgrdEnd() {
         const upgrade = upgrades[0];
         if (ClickCount >= upgrade.price) {
-            window.location.href = '/The8Clicker/EndScreen/End.html';  // Перенаправлення на нову сторінку
+            window.location.href = window.location.origin + (window.location.origin.includes('github.io') ? '/The8Clicker' : '') + '/EndScreen/End.html'; // Перенаправлення на нову сторінку
         }
     }
 
@@ -814,5 +901,8 @@ document.addEventListener("DOMContentLoaded", () => {
     upgrades[19].button.addEventListener("click", upgrdAutoCBonusX2);
     upgrades[20].button.addEventListener("click", upgrdSpeedCAuto);
     upgrades[21].button.addEventListener("click", upgrdClickSBonus2);
+    upgrades[22].button.addEventListener("click", upgrdChanceAstra);
+    upgrades[23].button.addEventListener("click", upgrdAutoBonusX2Num2);
+    upgrades[24].button.addEventListener("click", upgrdClickSBonus2Num2);
 });
 export { clickBonus, autoBonus, autoSpeed, critChance, criticalAvaible, crystalSpeed };

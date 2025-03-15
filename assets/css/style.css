@@ -541,6 +541,35 @@ header h1 {
 .upgrades .upgrdCritHide button:hover {
   background-color: #3f001a;
 }
+.upgrades .upgrdCrit2Hide {
+  display: none;
+  margin-top: 20px;
+  color: rgb(0, 0, 0);
+  background-color: #db1849;
+  padding: 10px 15px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 250px;
+}
+.upgrades .upgrdCrit2Hide p {
+  margin: 2px 0 10px 0;
+}
+.upgrades .upgrdCrit2Hide button {
+  background-color: #af1c41;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  -webkit-transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+}
+.upgrades .upgrdCrit2Hide button:hover {
+  background-color: #a31035;
+}
 
 .transform {
   border-radius: 10px;
@@ -642,6 +671,9 @@ footer input[type=checkbox] {
   -webkit-transition: 0.2s;
   transition: 0.2s;
 }
+footer .addinfo {
+  font-size: 18px;
+}
 footer .refresh-btn {
   margin-bottom: 20px;
   background: #3d3d3d;
@@ -659,4 +691,24 @@ footer .refresh-btn:hover {
 }
 footer .refresh-btn:active {
   background: #0a0a0a;
+}
+footer .changelog-btn {
+  margin-bottom: 5px;
+  margin-top: 10px;
+  background: #ac8080;
+  color: rgb(0, 0, 0);
+  border: none;
+  padding: 5px 12px;
+  font-size: 14px;
+  font-weight: 550;
+  border-radius: 4px;
+  cursor: pointer;
+  -webkit-transition: background 0.2s;
+  transition: background 0.2s;
+}
+footer .changelog-btn:hover {
+  background: #927171;
+}
+footer .changelog-btn:active {
+  background: #645252;
 }

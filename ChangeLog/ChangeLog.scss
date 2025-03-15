@@ -1,0 +1,106 @@
+body{    
+    -ms-overflow-style: none;
+    font-family: "Sofia Sans", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0d1d2;
+    overflow-x: hidden;
+}
+* {
+    box-sizing: border-box; /* Враховуємо відступи і межі в ширині елементів */
+}
+
+.changelog-container {
+    width: 80%;
+    max-width: 900px;
+    margin: 50px auto;
+    background-color: #ffffff81;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    p{
+        margin-bottom: 5px;
+        margin-top: 0;
+    }
+    .header{
+        display: flex;
+        flex-direction: column; /* Додаємо вертикальне вирівнювання */
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin-bottom: 15px;
+    }
+}
+  
+h1 {
+    text-align: center;
+    color: #333;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    margin-top: 0;
+}
+  
+ul {
+    margin-bottom: 8px;
+    list-style-type: none;
+    padding: 0;
+}
+  
+.changelog-entry {
+    padding: 20px;
+    border-bottom: 2px solid #ffc7c7;
+    transition: background-color 0.3s ease;
+}
+  
+.changelog-entry:last-child {
+    border-bottom: none;
+}
+  
+.changelog-entry:hover {
+    background-color: #ffe1e1;
+}
+  
+.entry-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+  
+.changelog-date {
+    margin-right: 5px;
+    font-weight: bold;
+    color: #555;
+    font-size: 1rem;
+}
+  
+.changelog-version {
+    font-style: italic;
+    color: #888;
+    font-size: 0.9rem;
+}
+  
+.changelog-description {
+    color: #666;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+
+
+.changelog-details {
+    padding-left: 20px;
+    margin-top: 0px;
+    color: #3b3b3b;
+}
+
+.changelog-details li {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    list-style-type: disc;
+    margin-bottom: 1px;
+}
+
+.changelog-details li::marker {
+    color: #e4a3a3; /* Колір маркерів (позначок) списку */
+}

@@ -372,6 +372,22 @@ header h1{
             background-color: #3f001a;
         }
     }
+    .upgrdCrit2Hide { 
+        display: none;
+        margin-top: 20px; 
+        color: rgb(0, 0, 0);
+        @include upgrade-styles(#db1849);
+
+        p{
+            margin:2px 0 10px 0;
+        }
+        button {
+            @include button-styles(#af1c41);
+        }
+        button:hover {
+            background-color: #a31035;
+        }
+    }
 }
 
 
@@ -443,6 +459,9 @@ footer{
         accent-color: #4CAF50; /* Робить чекбокс зеленим при виборі */
         transition: 0.2s;
     }
+    .addinfo{
+        font-size: 18px;
+    }
 
     .refresh-btn {
         margin-bottom:20px ;
@@ -462,5 +481,28 @@ footer{
     
     .refresh-btn:active {
         background: #0a0a0a;
+    }
+
+
+    .changelog-btn {
+        margin-bottom: 5px ;
+        margin-top: 10px;
+        background: #ac8080;
+        color: rgb(0, 0, 0);
+        border: none;
+        padding: 5px 12px;
+        font-size: 14px;
+        font-weight: 550;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background 0.2s;
+    }
+    
+    .changelog-btn:hover {
+        background: #927171;
+    }
+    
+    .changelog-btn:active {
+        background: #645252;
     }
 }
