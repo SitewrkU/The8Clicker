@@ -3,7 +3,7 @@ const crystalEl = document.getElementById("crystals");
 const SScrystalEl = document.getElementById("SScrystals");
 const heart = document.getElementById("heart");
 const header = document.getElementById("HeaderH");
-let ClickCount = 0;
+let ClickCount = 100000000;
 let CrystalCount = 0;
 let SSCrystalCount = 0;
 
