@@ -1,0 +1,124 @@
+@charset "UTF-8";
+body {
+  -ms-overflow-style: none;
+  font-family: "Sofia Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0d1d2;
+  overflow-x: hidden;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; /* Враховуємо відступи і межі в ширині елементів */
+}
+
+.changelog-container {
+  width: 80%;
+  max-width: 900px;
+  margin: 50px auto;
+  background-color: rgba(255, 255, 255, 0.5058823529);
+  padding: 30px;
+  border-radius: 12px;
+  -webkit-box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+.changelog-container p {
+  margin-bottom: 5px;
+  margin-top: 0;
+}
+.changelog-container .header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column; /* Додаємо вертикальне вирівнювання */
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  margin-top: 0;
+}
+
+ul {
+  margin-bottom: 8px;
+  list-style-type: none;
+  padding: 0;
+}
+
+.changelog-entry {
+  padding: 20px;
+  border-bottom: 2px solid #ffc7c7;
+  -webkit-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
+}
+
+.changelog-entry:last-child {
+  border-bottom: none;
+}
+
+.changelog-entry:hover {
+  background-color: #ffe1e1;
+}
+
+.entry-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 10px;
+}
+
+.changelog-date {
+  margin-right: 5px;
+  font-weight: bold;
+  color: #555;
+  font-size: 1rem;
+}
+
+.changelog-version {
+  font-style: italic;
+  color: #888;
+  font-size: 0.9rem;
+}
+
+.changelog-description {
+  color: #666;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.changelog-details {
+  padding-left: 20px;
+  margin-top: 0px;
+  color: #3b3b3b;
+}
+
+.changelog-details li {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  list-style-type: disc;
+  margin-bottom: 1px;
+}
+
+.changelog-details li::marker {
+  color: #e4a3a3; /* Колір маркерів (позначок) списку */
+}

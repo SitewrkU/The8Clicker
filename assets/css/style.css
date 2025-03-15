@@ -1,0 +1,714 @@
+@charset "UTF-8";
+body {
+  -ms-overflow-style: none;
+  font-family: "Sofia Sans", sans-serif;
+  margin: 0;
+  background-color: #ffaeb2;
+}
+
+html {
+  scrollbar-width: none;
+}
+
+hr {
+  border: none;
+  width: 60%;
+  margin-top: 20px;
+  height: 3px;
+  background-color: #cc2e2e;
+  -webkit-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+header h1 {
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  font-size: 40px;
+  font-family: "Rubik Mono One", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.Hidden {
+  display: none;
+}
+
+@media (min-width: 618px) {
+  .allUpgrades {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+}
+@media (max-width: 618px) {
+  .allUpgrades {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+.clicker {
+  margin-top: 50px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+.clicker p {
+  margin: 0;
+  font-size: 25px;
+}
+.clicker #crystals, .clicker #SScrystals {
+  display: none;
+}
+.clicker img {
+  margin-top: 25px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+   -ms-user-select: none;
+       user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  cursor: pointer;
+  -webkit-transition: -webkit-transform 0.2s linear;
+  transition: -webkit-transform 0.2s linear;
+  transition: transform 0.2s linear;
+  transition: transform 0.2s linear, -webkit-transform 0.2s linear;
+}
+.clicker img:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+.clicker img:active {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+  -webkit-transition-duration: 0.05s;
+          transition-duration: 0.05s;
+}
+
+.allUpgrades {
+  margin: 0 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 20px;
+}
+
+.upgrades {
+  border-radius: 10px;
+  background-color: #ffcccc;
+  padding: 0px 10px 10px;
+  margin-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.upgrades h2 {
+  margin: 0;
+  margin-top: 10px;
+}
+.upgrades .heartUpgrade {
+  margin-top: 10px;
+  background-color: #ff7979;
+  padding: 10px 15px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 250px;
+}
+.upgrades .heartUpgrade p {
+  margin: 2px 0 10px 0;
+}
+.upgrades .heartUpgrade button {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  -webkit-transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+}
+.upgrades .heartUpgrade button:hover {
+  background-color: #e42828;
+}
+.upgrades .autoUpgrade {
+  margin-top: 20px;
+  background-color: #ff709b;
+  padding: 10px 15px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 250px;
+}
+.upgrades .autoUpgrade p {
+  margin: 2px 0 10px 0;
+}
+.upgrades .autoUpgrade button {
+  background-color: #e022a7;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  -webkit-transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+}
+.upgrades .autoUpgrade button:hover {
+  background-color: #bd1498;
+}
+.upgrades .autoUpgradeBonus {
+  display: none;
+  margin-top: 20px;
+  background-color: #ff70c3;
+  padding: 10px 15px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 250px;
+}
+.upgrades .autoUpgradeBonus p {
+  margin: 2px 0 10px 0;
+}
+.upgrades .autoUpgradeBonus button {
+  background-color: #ca22e0;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  -webkit-transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+}
+.upgrades .autoUpgradeBonus button:hover {
+  background-color: #9b14bd;
+}
+.upgrades .superUpgrade {
+  color: white;
+  margin-top: 20px;
+  background-color: #111111;
+  padding: 10px 15px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 250px;
+}
+.upgrades .superUpgrade p {
+  margin: 2px 0 10px 0;
+}
+.upgrades .superUpgrade button {
+  background-color: #362f36;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  -webkit-transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+}
+.upgrades .superUpgrade button:hover {
+  background-color: #1b171b;
+}
+.upgrades .speedAutoUpgrade {
+  display: none;
+  color: white;
+  margin-top: 20px;
+  background-color: #0c3652;
+  padding: 10px 15px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 250px;
+}
+.upgrades .speedAutoUpgrade p {
+  margin: 2px 0 10px 0;
+}
+.upgrades .speedAutoUpgrade button {
+  background-color: #00266e;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  -webkit-transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+}
+.upgrades .speedAutoUpgrade button:hover {
+  background-color: #011d52;
+}
+.upgrades .speedAutoUpgrade2 {
+  display: none;
+  color: white;
+  margin-top: 20px;
+  background-color: #254b64;
+  padding: 10px 15px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 250px;
+}
+.upgrades .speedAutoUpgrade2 p {
+  margin: 2px 0 10px 0;
+}
+.upgrades .speedAutoUpgrade2 button {
+  background-color: #196e96;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  -webkit-transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+}
+.upgrades .speedAutoUpgrade2 button:hover {
+  background-color: #055377;
+}
+.upgrades .ThemeUpgrade {
+  margin-top: 10px;
+  color: white;
+  background-color: #0c0c0c;
+  padding: 10px 15px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 250px;
+}
+.upgrades .ThemeUpgrade p {
+  margin: 2px 0 10px 0;
+}
+.upgrades .ThemeUpgrade button {
+  background-color: #1d1d1d;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  -webkit-transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+}
+.upgrades .ThemeUpgrade button:hover {
+  background-color: #111111;
+}
+.upgrades .SoundUpgrade {
+  margin-top: 20px;
+  color: rgb(0, 0, 0);
+  background-color: #7aff81;
+  padding: 10px 15px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 250px;
+}
+.upgrades .SoundUpgrade p {
+  margin: 2px 0 10px 0;
+}
+.upgrades .SoundUpgrade button {
+  background-color: #10bd00;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  -webkit-transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+}
+.upgrades .SoundUpgrade button:hover {
+  background-color: #008b17;
+}
+.upgrades .SoundUpgrade {
+  margin-top: 20px;
+  color: rgb(0, 0, 0);
+  background-color: #7aff81;
+  padding: 10px 15px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 250px;
+}
+.upgrades .SoundUpgrade p {
+  margin: 2px 0 10px 0;
+}
+.upgrades .SoundUpgrade button {
+  background-color: #10bd00;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  -webkit-transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+}
+.upgrades .SoundUpgrade button:hover {
+  background-color: #008b17;
+}
+.upgrades .CriticUpgrade {
+  margin-top: 20px;
+  color: rgb(0, 0, 0);
+  background-color: #e4332d;
+  padding: 10px 15px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 250px;
+}
+.upgrades .CriticUpgrade p {
+  margin: 2px 0 10px 0;
+}
+.upgrades .CriticUpgrade button {
+  background-color: #c93228;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  -webkit-transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+}
+.upgrades .CriticUpgrade button:hover {
+  background-color: #8b1000;
+}
+.upgrades .upgrdEnd {
+  margin-top: 20px;
+  color: rgb(0, 0, 0);
+  background-color: #99120e;
+  padding: 10px 15px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 250px;
+}
+.upgrades .upgrdEnd p {
+  margin: 2px 0 10px 0;
+}
+.upgrades .upgrdEnd button {
+  background-color: #240000;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  -webkit-transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+}
+.upgrades .upgrdEnd button:hover {
+  background-color: #c90700;
+  color: black;
+}
+.upgrades .upgrdCrystl {
+  margin-top: 20px;
+  color: rgb(0, 0, 0);
+  background-color: #860a3a;
+  padding: 10px 15px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 250px;
+}
+.upgrades .upgrdCrystl p {
+  margin: 2px 0 10px 0;
+}
+.upgrades .upgrdCrystl button {
+  background-color: #470217;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  -webkit-transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+}
+.upgrades .upgrdCrystl button:hover {
+  background-color: #3f001a;
+}
+.upgrades .upgrdCrystl2 {
+  display: none;
+  margin-top: 20px;
+  color: rgb(0, 0, 0);
+  background-color: #a5003f;
+  padding: 10px 15px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 250px;
+}
+.upgrades .upgrdCrystl2 p {
+  margin: 2px 0 10px 0;
+}
+.upgrades .upgrdCrystl2 button {
+  background-color: #470217;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  -webkit-transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+}
+.upgrades .upgrdCrystl2 button:hover {
+  background-color: #3f001a;
+}
+.upgrades .upgrdCrit {
+  margin-top: 20px;
+  color: rgb(0, 0, 0);
+  background-color: #961d3b;
+  padding: 10px 15px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 250px;
+}
+.upgrades .upgrdCrit p {
+  margin: 2px 0 10px 0;
+}
+.upgrades .upgrdCrit button {
+  background-color: #520619;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  -webkit-transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+}
+.upgrades .upgrdCrit button:hover {
+  background-color: #3f001a;
+}
+.upgrades .upgrdCritHide {
+  display: none;
+  margin-top: 20px;
+  color: rgb(0, 0, 0);
+  background-color: #961d3b;
+  padding: 10px 15px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 250px;
+}
+.upgrades .upgrdCritHide p {
+  margin: 2px 0 10px 0;
+}
+.upgrades .upgrdCritHide button {
+  background-color: #520619;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  -webkit-transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+}
+.upgrades .upgrdCritHide button:hover {
+  background-color: #3f001a;
+}
+.upgrades .upgrdCrit2Hide {
+  display: none;
+  margin-top: 20px;
+  color: rgb(0, 0, 0);
+  background-color: #db1849;
+  padding: 10px 15px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 250px;
+}
+.upgrades .upgrdCrit2Hide p {
+  margin: 2px 0 10px 0;
+}
+.upgrades .upgrdCrit2Hide button {
+  background-color: #af1c41;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  -webkit-transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+}
+.upgrades .upgrdCrit2Hide button:hover {
+  background-color: #a31035;
+}
+
+.transform {
+  border-radius: 10px;
+  background-color: #ff84ca;
+  padding: 0px 10px 10px;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 250px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.transform h2 {
+  margin: 0;
+  margin-top: 10px;
+}
+.transform .transform1 {
+  margin-top: 5px;
+  color: rgb(0, 0, 0);
+  background-color: #ff9fb7;
+  padding: 10px 15px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 250px;
+}
+.transform .transform1 p {
+  margin: 2px 0 10px 0;
+}
+.transform .transform1 button {
+  background-color: #e46988;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  -webkit-transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+}
+.transform .transform1 button:hover {
+  background-color: #c2497b;
+}
+.transform .transform2 {
+  margin-top: 20px;
+  color: rgb(0, 0, 0);
+  background-color: #ff9fb7;
+  padding: 10px 15px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 250px;
+}
+.transform .transform2 p {
+  margin: 2px 0 10px 0;
+}
+.transform .transform2 button {
+  background-color: #e46988;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  -webkit-transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+}
+.transform .transform2 button:hover {
+  background-color: #c2497b;
+}
+
+footer {
+  text-align: center;
+  margin-top: 80px;
+}
+footer h2 {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+footer p {
+  margin: 5px 0;
+  font-size: 20px;
+}
+footer input[type=checkbox] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: #4CAF50; /* Робить чекбокс зеленим при виборі */
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+footer .addinfo {
+  font-size: 18px;
+}
+footer .refresh-btn {
+  margin-bottom: 20px;
+  background: #3d3d3d;
+  color: white;
+  border: none;
+  padding: 5px 12px;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  -webkit-transition: background 0.2s;
+  transition: background 0.2s;
+}
+footer .refresh-btn:hover {
+  background: #222222;
+}
+footer .refresh-btn:active {
+  background: #0a0a0a;
+}
+footer .changelog-btn {
+  margin-bottom: 5px;
+  margin-top: 10px;
+  background: #ac8080;
+  color: rgb(0, 0, 0);
+  border: none;
+  padding: 5px 12px;
+  font-size: 14px;
+  font-weight: 550;
+  border-radius: 4px;
+  cursor: pointer;
+  -webkit-transition: background 0.2s;
+  transition: background 0.2s;
+}
+footer .changelog-btn:hover {
+  background: #927171;
+}
+footer .changelog-btn:active {
+  background: #645252;
+}
