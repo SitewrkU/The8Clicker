@@ -13,12 +13,32 @@ body {
           box-sizing: border-box; /* Враховуємо відступи і межі в ширині елементів */
 }
 
+@media (max-width: 480px) {
+  .changelog-container {
+    width: 90%;
+    padding: 0px;
+    padding-top: 30px;
+  }
+  .changelog-container p {
+    font-size: 0.9em;
+  }
+  .changelog-entry {
+    padding: 8px;
+  }
+}
+@media (min-width: 481px) {
+  .changelog-container {
+    width: 80%;
+    padding: 30px;
+  }
+  .changelog-entry {
+    padding: 20px;
+  }
+}
 .changelog-container {
-  width: 80%;
   max-width: 900px;
   margin: 50px auto;
   background-color: rgba(255, 255, 255, 0.5058823529);
-  padding: 30px;
   border-radius: 12px;
   -webkit-box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
           box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
@@ -49,7 +69,7 @@ h1 {
   color: #333;
   font-size: 2rem;
   margin-bottom: 20px;
-  margin-top: 0;
+  margin-top: 0px;
 }
 
 ul {
@@ -59,7 +79,6 @@ ul {
 }
 
 .changelog-entry {
-  padding: 20px;
   border-bottom: 2px solid #ffc7c7;
   -webkit-transition: background-color 0.3s ease;
   transition: background-color 0.3s ease;
