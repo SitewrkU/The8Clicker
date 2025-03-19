@@ -3,9 +3,9 @@ const crystalEl = document.getElementById("crystals");
 const SScrystalEl = document.getElementById("SScrystals");
 const heart = document.getElementById("heart");
 const header = document.getElementById("HeaderH");
-let ClickCount = 0;
-let CrystalCount = 0;
-let SSCrystalCount = 0;
+let ClickCount = 1000000000;
+let CrystalCount = 10000;
+let SSCrystalCount = 1000;
 
 let clickBonus = 1;
 let autoBonus = 1;
@@ -904,5 +904,108 @@ document.addEventListener("DOMContentLoaded", () => {
     upgrades[22].button.addEventListener("click", upgrdChanceAstra);
     upgrades[23].button.addEventListener("click", upgrdAutoBonusX2Num2);
     upgrades[24].button.addEventListener("click", upgrdClickSBonus2Num2);
+
+
+    function loadFromLocalStorage() {
+        ClickCount = Number(localStorage.getItem("ClickCount")) || 1000000;
+        CrystalCount = Number(localStorage.getItem("CrystalCount")) || 0;
+        SSCrystalCount = Number(localStorage.getItem("SSCrystalCount")) || 0;
+        
+        clickBonus = Number(localStorage.getItem("clickBonus")) || 1;
+        autoBonus = Number(localStorage.getItem("autoBonus")) || 1;
+        autoSpeed = Number(localStorage.getItem("autoSpeed")) || 500;
+        crystalSpeed = Number(localStorage.getItem("crystalSpeed")) || 10000;
+        critChance = Number(localStorage.getItem("critChance")) || 0;
+        AstraChance = Number(localStorage.getItem("AstraChance")) || 3;
+    
+        soundAvaible = localStorage.getItem("soundAvaible") === "true";
+        criticalAvaible = localStorage.getItem("criticalAvaible") === "true";
+        autoAvaible = localStorage.getItem("autoAvaible") === "true";
+
+
+        const savedUpgrades = JSON.parse(localStorage.getItem("upgrades")) || {};
+
+        for (let key in upgrades) {
+            if (savedUpgrades[key]) {
+                upgrades[key].count = savedUpgrades[key].count || 0;
+    
+                if (savedUpgrades[key].buttonStyles && upgrades[key].button) {
+                    upgrades[key].button.style.backgroundColor = savedUpgrades[key].buttonStyles.backgroundColor || "";
+                    upgrades[key].button.style.color = savedUpgrades[key].buttonStyles.color || "";
+                }
+    
+                if (savedUpgrades[key].priceStyles && upgrades[key].priceElement) {
+                    upgrades[key].priceElement.style.backgroundColor = savedUpgrades[key].priceStyles.backgroundColor || "";
+                    upgrades[key].priceElement.style.color = savedUpgrades[key].priceStyles.color || "";
+                    upgrades[key].priceElement.textContent = savedUpgrades[key].priceStyles.textContent || "";
+                }
+    
+                if (savedUpgrades[key].ElementStyles && upgrades[key].element) {
+                    upgrades[key].element.style.backgroundColor = savedUpgrades[key].ElementStyles.backgroundColor || "";
+                    upgrades[key].element.style.display = savedUpgrades[key].ElementStyles.display || "";
+                }
+            }
+        }
+    
+        console.log("Data loaded!");
+    }
+
+
+
+
+    function saveToLocalStorage() {
+        localStorage.setItem("ClickCount", ClickCount);
+        localStorage.setItem("CrystalCount", CrystalCount);
+        localStorage.setItem("SSCrystalCount", SSCrystalCount);
+        
+        localStorage.setItem("clickBonus", clickBonus);
+        localStorage.setItem("autoBonus", autoBonus);
+        localStorage.setItem("autoSpeed", autoSpeed);
+        localStorage.setItem("crystalSpeed", crystalSpeed);
+        localStorage.setItem("critChance", critChance);
+        localStorage.setItem("AstraChance", AstraChance);
+    
+        localStorage.setItem("soundAvaible", soundAvaible);
+        localStorage.setItem("criticalAvaible", criticalAvaible);
+        localStorage.setItem("autoAvaible", autoAvaible);
+
+        let saveData = {};
+
+        for (let key in upgrades) {
+            saveData[key] = {
+                count: upgrades[key].count,
+    
+                buttonStyles: {
+                    backgroundColor: upgrades[key].button?.style.backgroundColor || "",
+                    color: upgrades[key].button?.style.color || "",
+                },
+    
+                priceStyles: {
+                    backgroundColor: upgrades[key].priceElement?.style.backgroundColor || "",
+                    color: upgrades[key].priceElement?.style.color || "",
+                    textContent: upgrades[key].priceElement.textContent || ""
+                }
+            };
+    
+            // Перевіряємо, чи існує `element`, перш ніж зберігати його стилі
+            if (upgrades[key].element) {
+                saveData[key].ElementStyles = {
+                    backgroundColor: upgrades[key].element.style.backgroundColor || "",
+                    display: upgrades[key].element.style.display || ""
+                };
+            }
+        }
+
+        localStorage.setItem("upgrades", JSON.stringify(saveData));
+        console.log("Data saved!")
+    }
+
+
+
+
+    loadFromLocalStorage();
+    setInterval(() => {
+        saveToLocalStorage();
+    }, 5000);
 });
-export { clickBonus, autoBonus, autoSpeed, critChance, criticalAvaible, crystalSpeed };
+export {clickBonus, autoBonus, autoSpeed, critChance, criticalAvaible, crystalSpeed};
