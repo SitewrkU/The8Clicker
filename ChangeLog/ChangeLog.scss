@@ -3,19 +3,63 @@ body{
     font-family: "Sofia Sans", sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0d1d2;
+    background-color: #e6d2d9;
     overflow-x: hidden;
 }
 * {
     box-sizing: border-box; /* Враховуємо відступи і межі в ширині елементів */
 }
+.svgImg {
+    vertical-align:text-top;
+}
+.warni{
+    vertical-align:bottom;
+}
+h1 {
+    text-align: center;
+    color: #333;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    margin-top: 0px;
+}
+  
+ul {
+    margin-bottom: 8px;
+    list-style-type: none;
+    padding: 0;
+}
+
+@media (max-width: 480px) {
+    .changelog-container {
+        width: 90%;
+        padding: 0px;
+        padding-top: 30px;
+        p{
+            font-size: 0.9em;
+        }
+    }
+    
+    .changelog-entry {
+        padding: 8px;
+    }
+}
+@media (min-width: 481px) {
+    .changelog-container {
+        width: 80%;
+        padding: 30px;
+    }
+    .changelog-entry {
+        padding: 20px;
+        padding-top: 10px;
+    }
+}
+
+
 
 .changelog-container {
-    width: 80%;
     max-width: 900px;
     margin: 50px auto;
     background-color: #ffffff81;
-    padding: 30px;
     border-radius: 12px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     p{
@@ -31,24 +75,31 @@ body{
     }
 }
   
-h1 {
-    text-align: center;
-    color: #333;
-    font-size: 2rem;
-    margin-bottom: 20px;
-    margin-top: 0;
-}
-  
-ul {
-    margin-bottom: 8px;
-    list-style-type: none;
-    padding: 0;
-}
+
   
 .changelog-entry {
-    padding: 20px;
-    border-bottom: 2px solid #ffc7c7;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border-bottom: 2px solid #f39797;
     transition: background-color 0.3s ease;
+
+    .Important{
+        margin-bottom: 5px;
+        border: 2px solid #0050a552;
+        background-color: #004da048;
+        padding: 8px;
+        border-radius: 4px;
+        .changelog-details li::marker {
+            color: #525252; /* Колір маркерів (позначок) списку */
+        }
+        .changelog-details:last-child { //Якщо список останній
+            margin-bottom: 0;
+        }
+        p:last-child{
+            margin-bottom: 0;
+        }
+    }
+
 }
   
 .changelog-entry:last-child {
@@ -56,7 +107,7 @@ ul {
 }
   
 .changelog-entry:hover {
-    background-color: #ffe1e1;
+    background-color: #ebc1c167;
 }
   
 .entry-header {
@@ -102,5 +153,5 @@ ul {
 }
 
 .changelog-details li::marker {
-    color: #e4a3a3; /* Колір маркерів (позначок) списку */
+    color: #d19494; /* Колір маркерів (позначок) списку */
 }

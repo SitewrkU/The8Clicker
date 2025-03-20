@@ -17,6 +17,7 @@ let AstraChance = 3; //3%
 let soundAvaible = false;
 let criticalAvaible = false;
 let autoAvaible = false;
+let autoCrystalAvaible = false;
 
 let intervalId;
 let intervalIdCr;
@@ -29,6 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
             priceElement: document.getElementById("upgrd-p1"),
             count: 0,
             price: 160,
+            EvListener: true
         },
         2: {
             button: document.getElementById("upgrd-btn2"),
@@ -38,6 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
             additionalElement2: document.getElementById("upgrd5"),
             count: 0,
             price: 2000,
+            EvListener: true
         },
         3: {
             button: document.getElementById("upgrd-btn3"),
@@ -45,6 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
             element: document.getElementById("upgrd3"),
             count: 0,
             price: 400,
+            EvListener: true
         },
         4: {
             button: document.getElementById("upgrd-btn4"),
@@ -52,6 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
             element: document.getElementById("upgrd4"),
             count: 0,
             price: 10000,
+            EvListener: true
         },
         5: {
             button: document.getElementById("upgrd-btn5"),
@@ -60,6 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
             additionalElement: document.getElementById("upgrd9"),
             count: 0,
             price: 25000,
+            EvListener: true
         },
         6: {
             button: document.getElementById("upgrd-btn6"),
@@ -67,6 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
             element: document.getElementById("upgrd6"),
             count: 0,
             price: 65000,
+            EvListener: true
         },
         7: {
             button: document.getElementById("upgrd-btn7"),
@@ -74,6 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
             element: document.getElementById("upgrd7"),
             count: 0,
             price: 77000,
+            EvListener: true
         },
         8: {
             button: document.getElementById("upgrd-btn8"),
@@ -81,6 +89,7 @@ document.addEventListener("DOMContentLoaded", () => {
             element: document.getElementById("upgrd8"),
             count: 0,
             price: 4000,
+            EvListener: true
         },
         9: {
             button: document.getElementById("upgrd-btn9"),
@@ -88,6 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
             element: document.getElementById("upgrd9"),
             count: 0,
             price: 80000,
+            EvListener: true
         },
         10: {
             button: document.getElementById("upgrd-btnCrystl"),
@@ -98,6 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
             additionalElement2: document.getElementById("upgrdCrystl2"),
             count: 0,
             price: 40000,
+            EvListener: true
         },
         11: {
             button: document.getElementById("upgrd-btnCrystl2"),
@@ -107,6 +118,7 @@ document.addEventListener("DOMContentLoaded", () => {
             additionalElement2: document.getElementById("upgrdChanceAstra"),
             count: 0,
             price: 15000,
+            EvListener: true
         },
         12: {
             button: document.getElementById("upgrd-btnCrit"),
@@ -114,6 +126,7 @@ document.addEventListener("DOMContentLoaded", () => {
             element: document.getElementById("upgrdCrit"),
             count: 0,
             price: 100,
+            EvListener: true
         },
         13: {
             button: document.getElementById("upgrd-btnAutoSpeed"),
@@ -122,6 +135,7 @@ document.addEventListener("DOMContentLoaded", () => {
             additionalElement: document.getElementById("upgrdAutoBonus"),
             count: 0,
             price: 220,
+            EvListener: true
         },
         14: {
             button: document.getElementById("upgrd-btnClickSBonus"),
@@ -130,16 +144,19 @@ document.addEventListener("DOMContentLoaded", () => {
             additionalElement: document.getElementById("upgrdClickSBonus2"),
             count: 0,
             price: 4,
+            EvListener: true
         },
         15: {
             button: document.getElementById("upgrd-btntransform1"),
             priceElement: document.getElementById("upgrd-ptransform1"),
             element: document.getElementById("transform1"),
+            EvListener: true
         },
         16: {
             button: document.getElementById("upgrd-btntransform2"),
             priceElement: document.getElementById("upgrd-ptransform2"),
             element: document.getElementById("transform2"),
+            EvListener: true
         },
         17: {
             button: document.getElementById("upgrd-btnCHeartUPG"),
@@ -147,6 +164,7 @@ document.addEventListener("DOMContentLoaded", () => {
             element: document.getElementById("CHeartUPG"),
             count: 0,
             price: 12,
+            EvListener: true
         },
         18: {
             button: document.getElementById("upgrd-btnupgrdAutoBonus"),
@@ -155,6 +173,7 @@ document.addEventListener("DOMContentLoaded", () => {
             additionalElement: document.getElementById("upgrdAutoBonusX2"),
             count: 0,
             price: 3,
+            EvListener: true
         },
         19: {
             button: document.getElementById("upgrd-btnupgrdAutoBonusX2"),
@@ -163,6 +182,7 @@ document.addEventListener("DOMContentLoaded", () => {
             additionalElement: document.getElementById("upgrdAutoBonusX2Num2"),
             count: 0,
             price: 5,
+            EvListener: true
         },
         20: {
             button: document.getElementById("upgrd-btnupgrdSpeedCAuto"),
@@ -170,6 +190,7 @@ document.addEventListener("DOMContentLoaded", () => {
             element: document.getElementById("upgrdSpeedCAuto"),
             count: 0,
             price: 100000,
+            EvListener: true
         },
         21: {
             button: document.getElementById("upgrd-btnClickSBonus2"),
@@ -178,6 +199,7 @@ document.addEventListener("DOMContentLoaded", () => {
             additionalElement: document.getElementById("upgrdClickSBonus2Num2"),
             count: 0,
             price: 150000,
+            EvListener: true
         },
         22: {
             button: document.getElementById("upgrd-btnChanceAstra"),
@@ -185,6 +207,7 @@ document.addEventListener("DOMContentLoaded", () => {
             element: document.getElementById("upgrdChanceAstra"),
             count: 0,
             price: 350,
+            EvListener: true
         },
         23: {
             button: document.getElementById("upgrd-btnupgrdAutoBonusX2Num2"),
@@ -193,6 +216,7 @@ document.addEventListener("DOMContentLoaded", () => {
             count: 0,
             price: 3,
             price2: 220,
+            EvListener: true
         },
         24: {
             button: document.getElementById("upgrd-btnClickSBonus2Num2"),
@@ -200,6 +224,7 @@ document.addEventListener("DOMContentLoaded", () => {
             element: document.getElementById("upgrdClickSBonus2Num2"),
             count: 0,
             price: 250000,
+            EvListener: true
         },
 
 
@@ -210,6 +235,7 @@ document.addEventListener("DOMContentLoaded", () => {
             element: document.getElementById("upgrdEnd"),
             count: 0,
             price: 8888888,
+            EvListener: true
         }
     };
 
@@ -281,13 +307,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 clearInterval(intervalId);  // Зупиняємо попередній інтервал
             }
 
-                intervalId = setInterval(() => {
+            intervalId = setInterval(() => {
                 ClickCount += autoBonus; 
                 clicksEl.textContent = `Кліки: ${Math.floor(ClickCount)}`; 
             }, autoSpeed); 
             
 
-            upgrade.button.removeEventListener("click", buyUpgradeAuto);
+            upgrade.EvListener = false;
         }
     }
 
@@ -314,7 +340,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 upgrade.button.style.backgroundColor = "#474444";
                 upgrade.button.style.cursor = "default";
                 upgrade.element.style.backgroundColor = "#706b6b";
-                upgrade.button.removeEventListener("click", buyUpgradeAutoBonus);
+                upgrade.EvListener = false;
             }
         }
     }
@@ -333,7 +359,7 @@ document.addEventListener("DOMContentLoaded", () => {
             upgrade.button.style.cursor = "default";
             upgrade.element.style.backgroundColor = "#706b6b";
             upgrade.priceElement.style.color = "black";
-            upgrade.button.removeEventListener("click", buyUpgradeSuper);
+            upgrade.EvListener = false;
         }
     }
 
@@ -352,7 +378,7 @@ document.addEventListener("DOMContentLoaded", () => {
             upgrade.element.style.backgroundColor = "#706b6b";
             upgrade.priceElement.style.color = "black";
             upgrade.additionalElement.style.display = "Block";
-            upgrade.button.removeEventListener("click", buyUpgradeSpeed);
+            upgrade.EvListener = false;
 
             if (intervalId) {
                 clearInterval(intervalId);  // Зупиняємо попередній інтервал
@@ -391,7 +417,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 upgrade.button.textContent = "Перемкнути";
             }
         }else if(upgrade.count == 1){
-            console.log("else")
             if(document.body.style.backgroundColor == "rgb(24, 24, 24)"){
                 document.body.style.backgroundColor = "#ffaeb2";
                 header.style.color = "black";
@@ -479,7 +504,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     upgrade.button.style.backgroundColor = "#474444";
                     upgrade.button.style.cursor = "default";
                     upgrade.element.style.backgroundColor = "#706b6b";
-                    upgrade.button.removeEventListener("click", buyUpgradeCrit);
+                    upgrade.EvListener = false;
                 }
             }
         }
@@ -499,7 +524,7 @@ document.addEventListener("DOMContentLoaded", () => {
             upgrade.button.style.cursor = "default";
             upgrade.element.style.backgroundColor = "#706b6b";
             upgrade.priceElement.style.color = "black";
-            upgrade.button.removeEventListener("click", buyUpgradeSpeed2);
+            upgrade.EvListener = false;
 
             if (intervalId) {
                 clearInterval(intervalId);  // Зупиняє попередній інтервал
@@ -522,6 +547,7 @@ document.addEventListener("DOMContentLoaded", () => {
             upgrade.button.disabled = true;
             upgrade.count++;
             ClickCount -= upgrade.price; 
+            autoCrystalAvaible = true;
             
             clicksEl.textContent = `Кліки: ${Math.floor(ClickCount)}`;
             SScrystalEl.textContent = `Астраліт: ${SSCrystalCount}`; 
@@ -549,7 +575,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 crystalEl.textContent = `Кристали: ${CrystalCount}`; 
             }, crystalSpeed); 
 
-            upgrade.button.removeEventListener("click", buyUpgradeAuto);
+            upgrade.EvListener = false;
         }
     }
 
@@ -594,7 +620,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 upgrade.element.style.backgroundColor = "#706b6b";
                 upgrade.additionalElement.style.display = "block";
                 upgrade.additionalElement2.style.display = "block";
-                upgrade.button.removeEventListener("click", CrystalSpeed);
+                upgrade.EvListener = false;
             }
         }
     }
@@ -616,7 +642,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 upgrade.button.style.backgroundColor = "#474444";
                 upgrade.button.style.cursor = "default";
                 upgrade.element.style.backgroundColor = "#706b6b";
-                upgrade.button.removeEventListener("click", CrystalCrit);
+                upgrade.EvListener = false;
             }
         }
     }
@@ -637,14 +663,14 @@ document.addEventListener("DOMContentLoaded", () => {
             upgrade.element.style.backgroundColor = "#706b6b";
             upgrade.priceElement.style.color = "black";
             upgrade.additionalElement.style.display = "block";
-            upgrade.button.removeEventListener("click", CrystalAutoSpeed);
+            upgrade.EvListener = false;
 
             if (intervalId) {
                 clearInterval(intervalId);  // Зупиняє попередній інтервал
             }
 
             // Запуск нового інтервалу з новою швидкістю
-            if(autoAvaible){
+            if(autoAvaible){ //Щоб не запускати автоферму якщо вона ще не куплена
                 intervalId = setInterval(() => {
                     ClickCount += autoBonus; 
                     clicksEl.textContent = `Кліки: ${Math.floor(ClickCount)}`; 
@@ -668,7 +694,7 @@ document.addEventListener("DOMContentLoaded", () => {
             upgrade.element.style.backgroundColor = "#706b6b";
             upgrade.priceElement.style.color = "black";
             upgrade.additionalElement.style.display = "block";
-            upgrade.button.removeEventListener("click", ClickSBonus);
+            upgrade.EvListener = false;
         }
     }
 
@@ -733,7 +759,7 @@ document.addEventListener("DOMContentLoaded", () => {
             upgrade.element.style.backgroundColor = "#706b6b";
             upgrade.priceElement.style.color = "black";
             upgrade.additionalElement.style.display = "block";
-            upgrade.button.removeEventListener("click", upgrdAutoCBonus);
+            upgrade.EvListener = false;
         }
     }
 
@@ -752,7 +778,7 @@ document.addEventListener("DOMContentLoaded", () => {
             upgrade.element.style.backgroundColor = "#706b6b";
             upgrade.priceElement.style.color = "black";
             upgrade.additionalElement.style.display = "block";
-            upgrade.button.removeEventListener("click", upgrdAutoCBonusX2);
+            upgrade.EvListener = false;
         }
     }
 
@@ -790,7 +816,7 @@ document.addEventListener("DOMContentLoaded", () => {
             upgrade.button.style.backgroundColor = "#474444";
             upgrade.button.style.cursor = "default";
             upgrade.element.style.backgroundColor = "#706b6b";
-            upgrade.button.removeEventListener("click", upgrdSpeedCAuto);
+            upgrade.EvListener = false;
         }
     }
 
@@ -809,7 +835,7 @@ document.addEventListener("DOMContentLoaded", () => {
             upgrade.element.style.backgroundColor = "#706b6b";
             upgrade.priceElement.style.color = "black";
             upgrade.additionalElement.style.display = "block";
-            upgrade.button.removeEventListener("click", upgrdClickSBonus2);
+            upgrade.EvListener = false;
         }
     }
 
@@ -826,7 +852,7 @@ document.addEventListener("DOMContentLoaded", () => {
             upgrade.button.style.backgroundColor = "#474444";
             upgrade.button.style.cursor = "default";
             upgrade.element.style.backgroundColor = "#706b6b";
-            upgrade.button.removeEventListener("click", upgrdChanceAstra);
+            upgrade.EvListener = false;
         }
     }
 
@@ -846,7 +872,7 @@ document.addEventListener("DOMContentLoaded", () => {
             upgrade.button.style.cursor = "default";
             upgrade.element.style.backgroundColor = "#706b6b";
             upgrade.priceElement.style.color = "black";
-            upgrade.button.removeEventListener("click", upgrdAutoBonusX2Num2);
+            upgrade.EvListener = false;
         }
     }
 
@@ -864,7 +890,7 @@ document.addEventListener("DOMContentLoaded", () => {
             upgrade.button.style.cursor = "default";
             upgrade.element.style.backgroundColor = "#706b6b";
             upgrade.priceElement.style.color = "black";
-            upgrade.button.removeEventListener("click", upgrdClickSBonus2Num2);
+            upgrade.EvListener = false;
         }
     }
 
@@ -879,30 +905,231 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    upgrades[0].button.addEventListener("click", upgrdEnd);
-    upgrades[1].button.addEventListener("click", buyUpgradeHeart);
-    upgrades[2].button.addEventListener("click", buyUpgradeAuto);
-    upgrades[3].button.addEventListener("click", buyUpgradeAutoBonus);
-    upgrades[4].button.addEventListener("click", buyUpgradeSuper);
-    upgrades[5].button.addEventListener("click", buyUpgradeSpeed);
-    upgrades[6].button.addEventListener("click", buyUpgradeTheme);
-    upgrades[7].button.addEventListener("click", buyUpgradeMusic);
-    upgrades[8].button.addEventListener("click", buyUpgradeCrit);
-    upgrades[9].button.addEventListener("click", buyUpgradeSpeed2);
-    upgrades[10].button.addEventListener("click", Crystal);
-    upgrades[11].button.addEventListener("click", CrystalSpeed);
-    upgrades[12].button.addEventListener("click", CrystalCrit);
-    upgrades[13].button.addEventListener("click", CrystalAutoSpeed);
-    upgrades[14].button.addEventListener("click", ClickSBonus);
-    upgrades[15].button.addEventListener("click", transform1);
-    upgrades[16].button.addEventListener("click", transform2);
-    upgrades[17].button.addEventListener("click", CUPGHeart);
-    upgrades[18].button.addEventListener("click", upgrdAutoCBonus);
-    upgrades[19].button.addEventListener("click", upgrdAutoCBonusX2);
-    upgrades[20].button.addEventListener("click", upgrdSpeedCAuto);
-    upgrades[21].button.addEventListener("click", upgrdClickSBonus2);
-    upgrades[22].button.addEventListener("click", upgrdChanceAstra);
-    upgrades[23].button.addEventListener("click", upgrdAutoBonusX2Num2);
-    upgrades[24].button.addEventListener("click", upgrdClickSBonus2Num2);
+    function loadFromLocalStorage() {
+        console.log("LOADING DATA:")
+        ClickCount = Number(localStorage.getItem("ClickCount")) || 0;
+        CrystalCount = Number(localStorage.getItem("CrystalCount")) || 0;
+        SSCrystalCount = Number(localStorage.getItem("SSCrystalCount")) || 0;
+        
+        clickBonus = Number(localStorage.getItem("clickBonus")) || 1;
+        autoBonus = Number(localStorage.getItem("autoBonus")) || 1;
+        autoSpeed = Number(localStorage.getItem("autoSpeed")) || 500;
+        crystalSpeed = Number(localStorage.getItem("crystalSpeed")) || 10000;
+        critChance = Number(localStorage.getItem("critChance")) || 0;
+        AstraChance = Number(localStorage.getItem("AstraChance")) || 3;
+    
+        soundAvaible = localStorage.getItem("soundAvaible") === "true";
+        criticalAvaible = localStorage.getItem("criticalAvaible") === "true";
+        autoAvaible = localStorage.getItem("autoAvaible") === "true";
+        autoCrystalAvaible = localStorage.getItem("autoCrystalAvaible") === "true";
+
+        clicksEl.textContent = `Кліки: ${Math.floor(ClickCount)}`; 
+
+        if(autoCrystalAvaible){
+            crystalEl.style.display = "block";
+            SScrystalEl.style.display = "block";
+            SScrystalEl.textContent = `Астраліт: ${SSCrystalCount}`; 
+                crystalEl.textContent = `Кристали: ${CrystalCount}`; 
+        }
+
+        if(soundAvaible){
+            clickSound = new Audio("assets/audio/clickSound.wav");
+        }
+
+        console.log("Variables loaded")
+
+        const savedUpgrades = JSON.parse(localStorage.getItem("upgrades")) || {};
+
+        for (let key in upgrades) {
+            if (savedUpgrades[key]) {
+                upgrades[key].count = savedUpgrades[key].count || 0;
+    
+                if (savedUpgrades[key].buttonStyles && upgrades[key].button) {
+                    upgrades[key].button.style.backgroundColor = savedUpgrades[key].buttonStyles.backgroundColor || "";
+                    upgrades[key].button.style.color = savedUpgrades[key].buttonStyles.color || "";
+                    upgrades[key].button.textContent = savedUpgrades[key].buttonStyles.textContent || "";
+                }
+    
+                if (savedUpgrades[key].priceStyles && upgrades[key].priceElement) {
+                    upgrades[key].priceElement.style.backgroundColor = savedUpgrades[key].priceStyles.backgroundColor || "";
+                    upgrades[key].priceElement.style.color = savedUpgrades[key].priceStyles.color || "";
+                    upgrades[key].priceElement.textContent = savedUpgrades[key].priceStyles.textContent || "";
+                }
+    
+                if (savedUpgrades[key].ElementStyles && upgrades[key].element) {
+                    upgrades[key].element.style.backgroundColor = savedUpgrades[key].ElementStyles.backgroundColor || "";
+                    upgrades[key].element.style.display = savedUpgrades[key].ElementStyles.display || "";
+                }
+
+                upgrades[key].EvListener = savedUpgrades[key].EvListener !== undefined ? savedUpgrades[key].EvListener : true;
+            
+                // Якщо EvListener === true, додаємо обробник подій
+                if (upgrades[key].EvListener) {
+                    addEventListenerToUpgrade(key);
+                }
+
+
+            }
+        }
+
+
+
+        for (let key in upgrades) {
+            if (upgrades[key].button) {
+                upgrades[key].button.style.cursor = upgrades[key].EvListener ? "pointer" : "default";
+                console.log("Cursor loaded")
+            }
+        }
+
+        if(autoAvaible){
+            if (intervalId) {
+                clearInterval(intervalId); 
+            }
+            //Запуск автоферми
+            intervalId = setInterval(() => {
+                ClickCount += autoBonus; 
+                clicksEl.textContent = `Кліки: ${Math.floor(ClickCount)}`; 
+            }, autoSpeed);
+            console.log("AutoFarm Loaded")
+        }
+
+        if(autoCrystalAvaible){
+            if (intervalIdCr) {
+                clearInterval(intervalIdCr); 
+            }
+
+            intervalIdCr = setInterval(() => {
+                let randCrystal = Math.floor(Math.random() * 12) + 1;
+                CrystalCount += randCrystal; 
+
+                let randSScrystal = Math.floor(Math.random() * 100) + 1;
+                if (randSScrystal <= AstraChance) {
+                    SSCrystalCount++;
+                }
+
+                SScrystalEl.textContent = `Астраліт: ${SSCrystalCount}`; 
+                crystalEl.textContent = `Кристали: ${CrystalCount}`; 
+            }, crystalSpeed); 
+
+            console.log("CrystalAutoFarm Loaded")
+        }
+
+
+
+
+        console.log("Data loaded!");
+    }
+
+
+
+
+
+
+    function addEventListenerToUpgrade(key) {
+        if (upgrades[key] && upgrades[key].button) {
+            switch (key) {
+                case "0": upgrades[key].button.addEventListener("click", upgrdEnd); break;
+                case "1": upgrades[key].button.addEventListener("click", buyUpgradeHeart); break;
+                case "2": upgrades[key].button.addEventListener("click", buyUpgradeAuto); break;
+                case "3": upgrades[key].button.addEventListener("click", buyUpgradeAutoBonus); break;
+                case "4": upgrades[key].button.addEventListener("click", buyUpgradeSuper); break;
+                case "5": upgrades[key].button.addEventListener("click", buyUpgradeSpeed); break;
+                case "6": upgrades[key].button.addEventListener("click", buyUpgradeTheme); break;
+                case "7": upgrades[key].button.addEventListener("click", buyUpgradeMusic); break;
+                case "8": upgrades[key].button.addEventListener("click", buyUpgradeCrit); break;
+                case "9": upgrades[key].button.addEventListener("click", buyUpgradeSpeed2); break;
+                case "10": upgrades[key].button.addEventListener("click", Crystal); break;
+                case "11": upgrades[key].button.addEventListener("click", CrystalSpeed); break;
+                case "12": upgrades[key].button.addEventListener("click", CrystalCrit); break;
+                case "13": upgrades[key].button.addEventListener("click", CrystalAutoSpeed); break;
+                case "14": upgrades[key].button.addEventListener("click", ClickSBonus); break;
+                case "15": upgrades[key].button.addEventListener("click", transform1); break;
+                case "16": upgrades[key].button.addEventListener("click", transform2); break;
+                case "17": upgrades[key].button.addEventListener("click", CUPGHeart); break;
+                case "18": upgrades[key].button.addEventListener("click", upgrdAutoCBonus); break;
+                case "19": upgrades[key].button.addEventListener("click", upgrdAutoCBonusX2); break;
+                case "20": upgrades[key].button.addEventListener("click", upgrdSpeedCAuto); break;
+                case "21": upgrades[key].button.addEventListener("click", upgrdClickSBonus2); break;
+                case "22": upgrades[key].button.addEventListener("click", upgrdChanceAstra); break;
+                case "23": upgrades[key].button.addEventListener("click", upgrdAutoBonusX2Num2); break;
+                case "24": upgrades[key].button.addEventListener("click", upgrdClickSBonus2Num2); break;
+            }
+        }
+    }
+
+
+
+
+
+    function saveToLocalStorage() {
+        localStorage.setItem("ClickCount", ClickCount);
+        localStorage.setItem("CrystalCount", CrystalCount);
+        localStorage.setItem("SSCrystalCount", SSCrystalCount);
+        
+        localStorage.setItem("clickBonus", clickBonus);
+        localStorage.setItem("autoBonus", autoBonus);
+        localStorage.setItem("autoSpeed", autoSpeed);
+        localStorage.setItem("crystalSpeed", crystalSpeed);
+        localStorage.setItem("critChance", critChance);
+        localStorage.setItem("AstraChance", AstraChance);
+    
+        localStorage.setItem("soundAvaible", soundAvaible);
+        localStorage.setItem("criticalAvaible", criticalAvaible);
+        localStorage.setItem("autoAvaible", autoAvaible);
+        localStorage.setItem("autoCrystalAvaible", autoCrystalAvaible);
+
+        let saveData = {};
+
+        for (let key in upgrades) {
+            saveData[key] = {
+                count: upgrades[key].count,
+                EvListener: upgrades[key].EvListener,
+    
+                buttonStyles: {
+                    backgroundColor: upgrades[key].button?.style.backgroundColor || "",
+                    color: upgrades[key].button?.style.color || "",
+                    textContent: upgrades[key].button.textContent || ""
+                },
+    
+                priceStyles: {
+                    backgroundColor: upgrades[key].priceElement?.style.backgroundColor || "",
+                    color: upgrades[key].priceElement?.style.color || "",
+                    textContent: upgrades[key].priceElement.textContent || ""
+                }
+            };
+    
+            // Перевіряємо, чи існує `element`, перш ніж зберігати його стилі
+            if (upgrades[key].element) {
+                saveData[key].ElementStyles = {
+                    backgroundColor: upgrades[key].element.style.backgroundColor || "",
+                    display: upgrades[key].element.style.display || ""
+                };
+            }
+        }
+
+        localStorage.setItem("upgrades", JSON.stringify(saveData));
+        console.log("Data saved!")
+    }
+
+
+
+
+
+    document.getElementById("Reset-btn").addEventListener("click", function() {
+        localStorage.clear();
+        window.location.href = window.location.href;
+    });
+
+
+    if (!localStorage.getItem("upgrades")) {
+        saveToLocalStorage();
+    }else{
+        console.log("Data already exists!")
+    }
+
+    loadFromLocalStorage();
+    setInterval(() => {
+        saveToLocalStorage();
+    }, 30000);
 });
-export { clickBonus, autoBonus, autoSpeed, critChance, criticalAvaible, crystalSpeed };
+export {clickBonus, autoBonus, autoSpeed, critChance, criticalAvaible, crystalSpeed};
