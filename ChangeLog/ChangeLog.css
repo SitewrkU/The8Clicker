@@ -13,6 +13,28 @@ body {
           box-sizing: border-box; /* Враховуємо відступи і межі в ширині елементів */
 }
 
+.svgImg {
+  vertical-align: text-top;
+}
+
+.warni {
+  vertical-align: bottom;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  margin-top: 0px;
+}
+
+ul {
+  margin-bottom: 8px;
+  list-style-type: none;
+  padding: 0;
+}
+
 @media (max-width: 480px) {
   .changelog-container {
     width: 90%;
@@ -33,6 +55,7 @@ body {
   }
   .changelog-entry {
     padding: 20px;
+    padding-top: 10px;
   }
 }
 .changelog-container {
@@ -64,24 +87,28 @@ body {
   margin-bottom: 15px;
 }
 
-h1 {
-  text-align: center;
-  color: #333;
-  font-size: 2rem;
-  margin-bottom: 20px;
-  margin-top: 0px;
-}
-
-ul {
-  margin-bottom: 8px;
-  list-style-type: none;
-  padding: 0;
-}
-
 .changelog-entry {
-  border-bottom: 2px solid #ffc7c7;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border-bottom: 2px solid #f39797;
   -webkit-transition: background-color 0.3s ease;
   transition: background-color 0.3s ease;
+}
+.changelog-entry .Important {
+  margin-bottom: 5px;
+  border: 2px solid rgba(0, 80, 165, 0.3215686275);
+  background-color: rgba(0, 77, 160, 0.2823529412);
+  padding: 8px;
+  border-radius: 4px;
+}
+.changelog-entry .Important .changelog-details li::marker {
+  color: #525252; /* Колір маркерів (позначок) списку */
+}
+.changelog-entry .Important .changelog-details:last-child {
+  margin-bottom: 0;
+}
+.changelog-entry .Important p:last-child {
+  margin-bottom: 0;
 }
 
 .changelog-entry:last-child {
@@ -89,7 +116,7 @@ ul {
 }
 
 .changelog-entry:hover {
-  background-color: #ffe1e1;
+  background-color: rgba(235, 193, 193, 0.4039215686);
 }
 
 .entry-header {
@@ -139,5 +166,5 @@ ul {
 }
 
 .changelog-details li::marker {
-  color: #e4a3a3; /* Колір маркерів (позначок) списку */
+  color: #d19494; /* Колір маркерів (позначок) списку */
 }
