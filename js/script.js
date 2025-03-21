@@ -3,9 +3,9 @@ const crystalEl = document.getElementById("crystals");
 const SScrystalEl = document.getElementById("SScrystals");
 const heart = document.getElementById("heart");
 const header = document.getElementById("HeaderH");
-let ClickCount = 10000000;
-let CrystalCount = 10000;
-let SSCrystalCount = 100;
+let ClickCount = 0;
+let CrystalCount = 0;
+let SSCrystalCount = 0;
 
 let clickBonus = 1;
 let autoBonus = 1;
