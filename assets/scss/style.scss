@@ -439,7 +439,27 @@ header h1{
     }
 }
 
+.changelog-btn {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border: 2px solid rgb(0, 0, 0);
+    background: #d1abab;
+    color: rgb(0, 0, 0);
+    padding: 5px 12px;
+    font-size: 14px;
+    font-weight: 550;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
 
+.changelog-btn:hover {
+    background: #927171;
+}
+
+.changelog-btn:active {
+    background: #645252;
+}
 
 footer{
     text-align: center;
@@ -491,6 +511,7 @@ footer{
         border-radius: 15px;
         background-color: rgba(255, 0, 0, 0.445);
         h3{
+            margin-bottom: 5px;
             margin-top: 5px;
             color: rgb(48, 0, 0);
         }
@@ -498,32 +519,12 @@ footer{
             display: inline-block; /* Фіксує проблему з розтягненням */
             margin-bottom: 10px; 
         }
-        .changelog-btn {
-            border: 2px solid rgb(0, 0, 0);
-            background: #d1abab;
-            color: rgb(0, 0, 0);
-            padding: 5px 12px;
-            font-size: 14px;
-            font-weight: 550;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-        
-        .changelog-btn:hover {
-            background: #927171;
-        }
-        
-        .changelog-btn:active {
-            background: #645252;
-        }
-
 
         .Reset-btn {
-            background: #690000;
-            color: #ffffff;
-            border: none;
-            padding: 5px 12px;
+            border: 2px solid rgb(160, 0, 0);
+            background: #ff000062;
+            color: #460000;
+            padding: 8px 12px;
             font-size: 14px;
             font-weight: 550;
             border-radius: 4px;
@@ -532,7 +533,7 @@ footer{
         }
         
         .Reset-btn:hover {
-            background: #911c1c;
+            background: #ff000042;
         }
         
         .Reset-btn:active {

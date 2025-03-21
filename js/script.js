@@ -3,9 +3,9 @@ const crystalEl = document.getElementById("crystals");
 const SScrystalEl = document.getElementById("SScrystals");
 const heart = document.getElementById("heart");
 const header = document.getElementById("HeaderH");
-let ClickCount = 0;
-let CrystalCount = 0;
-let SSCrystalCount = 0;
+let ClickCount = 10000000;
+let CrystalCount = 10000;
+let SSCrystalCount = 100;
 
 let clickBonus = 1;
 let autoBonus = 1;
@@ -943,6 +943,8 @@ document.addEventListener("DOMContentLoaded", () => {
         for (let key in upgrades) {
             if (savedUpgrades[key]) {
                 upgrades[key].count = savedUpgrades[key].count || 0;
+                upgrades[key].price = savedUpgrades[key].price;
+                upgrades[key].price2 = savedUpgrades[key].price2;
     
                 if (savedUpgrades[key].buttonStyles && upgrades[key].button) {
                     upgrades[key].button.style.backgroundColor = savedUpgrades[key].buttonStyles.backgroundColor || "";
@@ -973,7 +975,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
 
-
+        //OTHER LOADS
         for (let key in upgrades) {
             if (upgrades[key].button) {
                 upgrades[key].button.style.cursor = upgrades[key].EvListener ? "pointer" : "default";
@@ -1083,6 +1085,8 @@ document.addEventListener("DOMContentLoaded", () => {
         for (let key in upgrades) {
             saveData[key] = {
                 count: upgrades[key].count,
+                price: upgrades[key].price,
+                price2: upgrades[key].price2,
                 EvListener: upgrades[key].EvListener,
     
                 buttonStyles: {
